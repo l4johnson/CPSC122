@@ -4,6 +4,10 @@ Class: CPSC 122
 Date Submitted: January 17, 2021
 Assignment: Project 4 
 Description: printing a certain number of prime numbers in a certain number of columns to an output file 
+
+	**More efficient algorithim: To determine whether a value was prime, I only needed to check and see if it was divisible by 2, 3, 5, or 7. The number is not prime if it is evenly divisible by at least one of these numbers because all other numbers are either divisible by these numbers as well, or prime.
+	
+							** I did the bonus ^^^^ **
 */
 
 #include <iostream>
@@ -13,13 +17,20 @@ using namespace std;
 bool isPrime(int num);
 void displayPrimes(ofstream& fout, int nums, int cols);
 
-int numPrimes = 0;
-int count = 0;
-int i = 2;
-int numCols = 0;
 
 int main(int argc, char* argv[])
 {
+	if(argc != 2)
+	{
+		cout << "Incorrect number of command line arguments" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	int numPrimes = 0;
+	int count = 0;
+	int i = 2;
+	int numCols = 0;
+
 	ofstream fout;
 
 	fout.open(argv[1]);
@@ -57,7 +68,9 @@ bool isPrime(int num)
 	int primes[] = {2,3,5,7};
 	
 	for(int testPrime : primes)
-		if(num % testPrime == 0 && num != testPrime)
+		if(num == testPrime)
+			return true;
+		else if(num % testPrime == 0)
 			return false;
 			
 	return true;
