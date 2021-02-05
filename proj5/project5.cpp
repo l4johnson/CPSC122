@@ -1,3 +1,11 @@
+/*
+ Name: Luke Johson
+ Class: CPSC 122, Section 01
+ Date Submitted: February 5, 2021
+ Assignment: Project 5                                                                     
+ Description: write a program that 1. generates an encryption key 2. encrypts a text file and writes the cypher text to a new file 3. decrypts a cypher text file and writes the plain text to a file
+ Notes: 
+*/
 #include <iostream>
 #include <fstream> 
 #include <cstdlib>  //necessary for the constant EXIT_FAILURE
@@ -27,7 +35,6 @@ int main(int argc, char* argv[])
  if (mode == 2)
   decryptFile(argv[2], argv[3], argv[4]);
 
-
  return 0;
 }
 
@@ -47,6 +54,8 @@ void generateKey(string keyFile)
 
 /*
 Description: function generates a random number from 1 to 25
+Input: n/a
+Returns: random int from 1 to 25
 */
 int keyGen()
 {
