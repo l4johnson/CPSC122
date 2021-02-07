@@ -186,10 +186,9 @@ int readKey(string file)
 {
 	fstream fin;
 	fileOpen(fin, file, 'r');
-	string line;
-	getline(fin, line);
+	int key;
 	
-	int key = stoi(line);
+	fin >> key;
 	
 	fin.close();
 	return key;
