@@ -1,3 +1,11 @@
+/*
+Name: Luke Johnson
+Class: CPSC 122
+Date Submitted: March 17, 2021
+Assignment: Project 9 
+Description: Testing out different member functions for a linked list 
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -5,7 +13,7 @@ using namespace std;
 
 int main()
 {
-	/*//// Test 1 - PutItemH & GetItemH
+/*//// Test 1 - PutItemH & GetItemH ///////////////////////////////////
  //Use of a static list 
  List lst;
  lst.PutItemH(77);
@@ -23,10 +31,10 @@ int main()
  cout << endl;
 
  delete lst1; //necessary to invoke destructor on dynamic list
- */
+ *///
  
  
-/*/// Test 2 - IsEmpty
+/*/// Test 2 - IsEmpty //////////////////////////////////////////////////
 	cout << "Test IsEmpty" << endl;
   //Use of a static list 
   List lst;
@@ -54,7 +62,7 @@ int main()
 *///
  
  
-/*/// Test 3 - DeleteItemH
+/*/// Test 3 - DeleteItemH ////////////////////////////////////////////
 	cout << "Test DeleteItemH" << endl;
   //Use of a static list 
   List lst;
@@ -84,7 +92,7 @@ int main()
 */
  
  
-/*/// Test 4 - GetLength
+/*/// Test 4 - GetLength ////////////////////////////////////////////
 	cout << "Test GetLength" << endl;
   //Use of a static list 
   List lst;
@@ -112,7 +120,7 @@ int main()
 *///
  
  
-/*/// Test 5 - Find
+/*/// Test 5 - Find /////////////////////////////////////////////////////
 	cout << "Test Find" << endl;
   //Use of a static list 
   List lst;
@@ -140,7 +148,7 @@ int main()
 *///
 
  
-/// Test 6 - Delete Item
+/*// Test 6 - Delete Item /////////////////////////////////////////////
  	cout << "Test DeleteItem" << endl;
  	//Use of a static list 
  	List lst;
@@ -167,7 +175,7 @@ int main()
  	cout << endl;
 
  	delete lst1; //necessary to invoke destructor on dynamic list
-///
+*///
  
  
  cout << endl;

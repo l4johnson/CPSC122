@@ -1,3 +1,11 @@
+/*
+Name: Luke Johnson
+Class: CPSC 122
+Date Submitted: March 17, 2021
+Assignment: Project 9 
+Description: Testing out different member functions for a linked list 
+*/
+
 #include <iostream>
 using namespace std;
 

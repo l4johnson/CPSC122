@@ -1,9 +1,9 @@
 /*
-Name: Paul De Palma
-Class: CPSC 122, Section 1
-Date Submitted: February 25, 2021
-Assignment: N/A 
-Description: Program illustrates a simple linked list 
+Name: Luke Johnson
+Class: CPSC 122
+Date Submitted: March 17, 2021
+Assignment: Project 9 
+Description: Testing out different member functions for a linked list 
 */
 
 #ifndef LIST_H
