@@ -9,15 +9,15 @@ Description: Testing out different member functions for a doubly linked list wit
 #ifndef LIST_H
 #define LIST_H
 
-typedef int itemType;
-
+template <typename T>
 struct doubleNode
 {
  doubleNode* prev;
- itemType item;
+ T item;
  doubleNode* next;
 };
 
+template <typename T>
 class ListD
 {
  public:
@@ -43,7 +43,7 @@ class ListD
    pre: ListD exists, pos is in the range [1..length+1].
    post: new node is inserted at postion pos. 
    */
-   void Insert(itemType item, int pos);   
+   void Insert(const T, int pos);   
 
    /*
    pre: ListD exists, pos is in the range [1..length].
@@ -56,7 +56,7 @@ class ListD
    post: All nodes containing item have been deleted.  Returns the
          number of nodes that have been deleted. 
    */
-   int DeleteAll(itemType item);   
+   int DeleteAll(const T);   
 
    /*
    pre: ListD exists.
@@ -87,11 +87,18 @@ class ListD
    Post: Returns insertion point A (see the implemention of insert)
          used in inserting a node in a list 
    */
-   doubleNode* FindPosition(int pos);
+   doubleNode<T>* FindPosition(int pos);
+   
+   /*
+   Comment: Used in conjunction with constructor and copy constructor functions   
+   pre:  nothing
+   Post: returns formatted dummy nodes and sets length 
+   */
+   void makeList();
 
    int length;         //length of the list
-   doubleNode* head;   //points to the first dummy node 
-   doubleNode* tail;   //points to the last dummy node  
+   doubleNode<T>* head;   //points to the first dummy node 
+   doubleNode<T>* tail;   //points to the last dummy node  
 };
 #endif
 
