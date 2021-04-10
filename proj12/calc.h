@@ -125,6 +125,13 @@ class Calc
          if parentheses are balanced, false otherwise
   */
   bool CheckParens();
+  
+  /* 
+   pre:  filled inFix Cstring with numbers
+   post: replaces the first number in the Cstring inFix with its corresponding variable
+   			 and returns the index of the start of the number being removed
+  */
+  int replaceNum();
 
   char*  inFix;     //null-terminated string that holds infix expression 
   int*  valueTbl;   //pointer to an array holding variable and expression values 
