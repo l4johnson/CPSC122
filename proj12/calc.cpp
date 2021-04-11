@@ -14,16 +14,17 @@ Calc::Calc(char* argvIn)
 	inFix = new char[strlen(argvIn) + 1];
  	strcpy(inFix,argvIn);
  	
+ 	if(!CheckParens())
+	{
+		cout << "Error... Check Parentheses" << endl;
+		exit(EXIT_FAILURE);
+	}
 	if(!CheckTokens())
 	{
 		cout << "Error... Check Tokens" << endl;
 		exit(EXIT_FAILURE);
 	}
-	if(!CheckParens())
-	{
-		cout << "Error... Check Parenthases" << endl;
-		exit(EXIT_FAILURE);
-	}
+	
 	
 	MakeValueTbl();
 	Parse();
@@ -115,12 +116,18 @@ bool Calc::CheckParens()
 {
 	Stack* parens = new Stack;
 	parens->Push(0);
+	
 	for(int i = 0; i < strlen(inFix); i++)
 		if (inFix[i] == '(')
 			parens->Push(1);
+		else if (inFix[i] == ')' && parens->Peek() == 0)
+		{
+			delete parens;
+			return false;
+		}
 		else if (inFix[i] == ')')
 			parens->Pop();
-			
+
 	if(parens->Peek() == 0)
 	{
 		delete parens;
