@@ -24,20 +24,20 @@ Calc::Calc(char* argvIn)
 		cout << "Error... Check Tokens" << endl;
 		exit(EXIT_FAILURE);
 	}
-	
+	stk = new Stack;
 	
 	MakeValueTbl();
 	Parse();
 	
 		
-	stk = new Stack;
+	
 }
 
 Calc::~Calc()
 {
 	delete stk;
 	delete inFix;
-
+	delete valueTbl;
 }
 
 bool Calc::CheckTokens()
@@ -84,22 +84,21 @@ void Calc::Parse()
 	int totalVal = 0;
 	int digitIdx = 0;
 	int currentVal = 0;
-	Stack* digits = new Stack;
 	int idx = 0;
 	valueIdx = 0;
 	while(inFix[idx] != 0)
 	{
 		if(inFix[idx] >= '0' && inFix[idx] <= '9')
 		{
-			digits->Push(inFix[idx] - '0');
+			stk->Push(inFix[idx] - '0');
 			digitIdx++;
 		}
 		else if (digitIdx != 0)
 		{
 			for(int j = 0; j < digitIdx; j++)
 			{
-				totalVal += digits->Peek() * pow(10, j);
-				digits->Pop();
+				totalVal += stk->Peek() * pow(10, j);
+				stk->Pop();
 			}
 			valueTbl[valueIdx] = totalVal;
 			idx = replaceNum();
@@ -109,7 +108,6 @@ void Calc::Parse()
 		}
 		idx++;
 	}
-	delete digits;
 }
 
 bool Calc::CheckParens()
